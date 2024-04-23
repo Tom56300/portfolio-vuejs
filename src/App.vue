@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- Панель навигации может быть здесь -->
+   
     <router-view/>
   </div>
 </template>
@@ -10,3 +10,7 @@ export default {
   name: 'App'
 };
 </script>
+
+<style>
+
+</style>

@@ -1,7 +1,7 @@
 <template>
   
-<header className="container-header">
-  <Logo />
+<header class="container-header">
+  <logo />
   <Navbar />
   <SocialIcons />
   </header>
@@ -14,10 +14,10 @@
     <Portfolio />
     <FormSection />
     <FooterSection />
-
+    <router-view/>
 </template>
 <script>
-import Logo from '../components/Logo.vue';
+
 import Navbar from '../components/NavBar.vue';
 import SocialIcons from '../components/SocialIcons.vue';
 import Apropos from '../components/Apropos.vue';
@@ -26,11 +26,12 @@ import Competences from '../components/Competences.vue';
 import Portfolio from '../components/Portfolio.vue';
 import FormSection from '../components/FormSection.vue';
 import FooterSection from '../components/FooterSection.vue';
+import Logo from '../components/Logo.vue';
 
 
 export default {
 components: {
-  Logo,
+  
   Navbar,
   SocialIcons,
   Apropos,
@@ -38,7 +39,8 @@ components: {
   Competences,
   Portfolio,
   FormSection,
-  FooterSection
+  FooterSection,
+Logo
 },
 };
 </script>

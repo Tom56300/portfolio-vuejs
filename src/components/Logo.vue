@@ -11,7 +11,6 @@
   </script>
   
   <style scoped>
-  /* Ваши стили для логотипа */
   .logo{
     font-family: 'Poppins', sans-serif;
     color: #EADFB4;

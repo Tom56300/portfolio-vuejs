@@ -22,9 +22,9 @@
                     <textarea id="comments" class="input-textarea" name="comment" placeholder="Ecrire votre commentaire ici"></textarea>
                   </div>
                   <div class="form-group">
-                    <button type="submit" id="submit" class="submit-button">
-                      Envoyer
-                    </button>
+                    <div>
+                      <CustomButton>Envoyer</CustomButton>
+                  </div>
                   </div>
                 </form>
       
@@ -32,8 +32,12 @@
   </template>
   
   <script>
+  import CustomButton from './Button.vue';
   export default {
-    name: 'FormSection'
+    name: 'FormSection', // Имя компонента FormSection
+    components: {
+      CustomButton // Регистрация компонента CustomButton внутри компонента FormSection
+    }
   }
   </script>
   
@@ -92,21 +96,5 @@
   border-color: #66afe9;
 }
 
-.submit-button {
-  width: 100%;
-  padding: 12px;
-  font-size: 18px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 600ms ease;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.1) translateY(-5px);
-}
 
   </style>

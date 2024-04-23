@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar">
       <ul class="list-unstyled">
-        <li><router-link to="/">Accueil</router-link></li>
+        <li><router-link to="/home">Accueil</router-link></li>
         <li><router-link to="/apropos">A propos</router-link></li>
         <li><router-link to="/competences">Compétences</router-link></li>
         <li><router-link to="/portfolio">Portfolio</router-link></li>

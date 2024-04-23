@@ -1,4 +1,5 @@
 <template>
+  
     <section class="footer">
       <div class="footer-container">
         <div class="grid">
