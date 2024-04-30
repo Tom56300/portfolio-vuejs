@@ -25,7 +25,7 @@
     </div>
                <div class="footer-copyright">
                 
-                <p>Dernière mise à jour : 3 avril 2024</p>
+                <p>Dernière mise à jour : {{ lastUpdateDate }}</p>
         </div>
       
     </section>
@@ -33,7 +33,27 @@
   
   <script>
   export default {
-    name: 'FooterSection'
+    name: 'FooterSection',
+    data() {
+    return {
+      lastUpdateDate: ''
+    };
+  },
+  mounted() {
+    // Mettre à jour la date lors du montage du composant
+    this.updateDate();
+
+    // Mettre à jour la date toutes les 60 secondes (ajustez l'intervalle selon vos besoins)
+    setInterval(() => {
+      this.updateDate();
+    }, 60000); // 60000 ms = 60 secondes
+  },
+  methods: {
+    updateDate() {
+      // Mettre à jour la date actuelle
+      this.lastUpdateDate = new Date().toLocaleString();
+    }
+  }
   }
   </script>
   

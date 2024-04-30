@@ -34,9 +34,9 @@
   <script>
   import CustomButton from './Button.vue';
   export default {
-    name: 'FormSection', // Имя компонента FormSection
+    name: 'FormSection', 
     components: {
-      CustomButton // Регистрация компонента CustomButton внутри компонента FormSection
+      CustomButton 
     }
   }
   </script>

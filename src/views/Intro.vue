@@ -3,10 +3,10 @@
   <div class="intro-wrapper">
   <div class="intro">
     <div class="content">
-      <h2>Je m'appelle Thomas Carbonel, je suis développeur web.</h2>
+      <h2>Je m'appelle Thomas Carbonel, je suis développeur web junior</h2>
 <p>Bienvenue dans mon portfolio.</p>
     <CustomButton buttonClass="enter-button">
-      <router-link to="/home">Go to Home Page</router-link>
+      <router-link to="/home">Aller à la page d'accueil</router-link>
     </CustomButton>
 
     </div>
@@ -18,9 +18,9 @@
 <script>
 import CustomButton from '../components/Button.vue';
   export default {
-    name: 'Intro', // Имя компонента FormSection
+    name: 'Intro', 
     components: {
-      CustomButton // Регистрация компонента CustomButton внутри компонента FormSection
+      CustomButton 
     }
   }
 
@@ -37,7 +37,7 @@ import CustomButton from '../components/Button.vue';
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 265%; 
+  width: 100%; 
   overflow-x: hidden;
   background: linear-gradient(112deg, rgba(131,58,180,1) 0%, rgba(29,207,253,1) 0%, rgba(252,176,69,1) 100%);
   background-size: 400% 400%;

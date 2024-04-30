@@ -11,12 +11,12 @@
   
   <script>
   export default {
-    // Можно добавить логику компонента здесь
+
   };
   </script>
   
   <style scoped>
-  /* Стили для компонента Navbar */
+  
   .navbar{
     display: flex;
     justify-content:center;
@@ -36,10 +36,10 @@ a{
 li {
     display: inline-flex;
     align-items: center;
-    margin-right: 20px; /* Расстояние между элементами, замените на ваше значение */
+    margin-right: 20px;
 }
 
-/* Последний элемент списка не должен иметь правого отступа */
+
 li:last-child {
     margin-right: 0;
 }

@@ -1,9 +1,9 @@
 <template>
     <div class="end">
       <h1>404 Not Found</h1>
-      <p>Page non trouvée. Veuillez retourner à la page Home</p>
+      <p>Page non trouvée. Veuillez retourner à la page d'accueil</p>
       <CustomButton buttonClass="enter-button">
-      <router-link to="/home">Go to Home Page</router-link>
+      <router-link to="/home">Aller à la page d'accueil</router-link>
     </CustomButton>
     </div>
     <router-view/>
@@ -12,9 +12,9 @@
   <script>
   import CustomButton from '../components/Button.vue';
   export default {
-    name: 'NotFound', // Имя компонента FormSection
+    name: 'NotFound',
     components: {
-      CustomButton // Регистрация компонента CustomButton внутри компонента FormSection
+      CustomButton 
     }
   }
   </script>
@@ -49,13 +49,12 @@
 }
 
 .enter-button a {
-  color: inherit; /* Наследует цвет текста от родительского элемента */
-  text-decoration: none; /* Убирает подчеркивание ссылки */
+  color: inherit;
+  text-decoration: none;
 }
 
 .enter-button a:hover {
-  color: inherit; /* При наведении цвет ссылки остается прежним */
-  text-decoration: none; /* При наведении также убирает подчеркивание */
+  color: inherit;
+  text-decoration: none;
 }
-
   </style>

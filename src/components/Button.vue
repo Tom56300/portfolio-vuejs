@@ -10,12 +10,11 @@
     props: {
       buttonClass: {
         type: String,
-        default: 'custom-button' // Класс кнопки по умолчанию
+        default: 'custom-button' // class par default pour button 
       }
     },
     methods: {
       handleClick() {
-        // Логика обработки клика на кнопку
         console.log('Button clicked');
       }
     }

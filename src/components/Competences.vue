@@ -25,53 +25,53 @@
 export default {
   name: 'Competences',
   mounted() {
-    // Добавляем слушателя события прокрутки страницы при монтировании компонента
+    // Ajout d'un écouteur d'événements de défilement de la page lors du montage du composant
     window.addEventListener('scroll', this.checkAndFillProgressBar);
-    // Запускаем проверку заполнения прогресс-баров при загрузке страницы
+    // Déclenchement de la vérification et du remplissage des barres de progression lors du chargement de la page
     this.checkAndFillProgressBar(); 
   },
-   // Удаляем слушателя события прокрутки при уничтожении компонента
+  // Suppression de l'écouteur d'événements de défilement lors de la destruction du composant
   beforeDestroy() {
     window.removeEventListener('scroll', this.checkAndFillProgressBar);
   },
   methods: {
     checkAndFillProgressBar() {
-       // Находим все прогресс-бары на странице
-  const bars = document.querySelectorAll('.progress-container.progress-bar');
-  console.log(bars);
-  bars.forEach(bar => {
-    // Получаем координаты и размеры прогресс-бара относительно окна браузера
-  const rect = bar.getBoundingClientRect();
-  // Проверяем, виден ли прогресс-бар на странице
-  const isVisible = (rect.top >= 0 && rect.bottom <= window.innerHeight);
-  console.log('isVisible:', isVisible);
-  if (isVisible) {
-    // Получаем ширину прогресс-бара из атрибута данных
-    const width = parseInt(bar.dataset.width);
-    console.log('width:', width);
-    // Заполняем прогресс-бар с анимацией
-    this.fillProgressBar(bar, width);
-  }
-});
-},
-fillProgressBar(bar, width) {
-  let start = null; // Объявляем переменную для отслеживания времени начала анимации
-  const duration = 2000; // Продолжительность анимации в миллисекундах
-  function step(timestamp) {
-    if (!start) start = timestamp;
-    const progress = timestamp - start;// Вычисляем прошедшее время анимации
-        // Вычисляем новую ширину прогресс-бара в зависимости от времени
-    console.log('Progress:', progress);
-    bar.style.width = Math.min((progress / duration) * width, width) + '%';
-    console.log('New width:', bar.style.width);
-    if (progress < duration) {
-      // Если анимация еще не завершена, продолжаем выполнение анимации
+       // Recherche de toutes les barres de progression sur la page
+      const bars = document.querySelectorAll('.progress-container.progress-bar');
+      console.log(bars);
+      bars.forEach(bar => {
+        // Obtention des coordonnées et dimensions de la barre de progression par rapport à la fenêtre du navigateur
+        const rect = bar.getBoundingClientRect();
+        // Vérification si la barre de progression est visible sur la page
+        const isVisible = (rect.top >= 0 && rect.bottom <= window.innerHeight);
+        console.log('isVisible:', isVisible);
+        if (isVisible) {
+          // Obtention de la largeur de la barre de progression depuis l'attribut de données
+          const width = parseInt(bar.dataset.width);
+          console.log('width:', width);
+          // Remplissage de la barre de progression avec une animation
+          this.fillProgressBar(bar, width);
+        }
+      });
+    },
+    fillProgressBar(bar, width) {
+      let start = null; // Déclaration d'une variable pour suivre le début de l'animation
+      const duration = 2000; // Durée de l'animation en millisecondes
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;// Calcul du temps écoulé depuis le début de l'animation
+        // Calcul de la nouvelle largeur de la barre de progression en fonction du temps
+        console.log('Progress:', progress);
+        bar.style.width = Math.min((progress / duration) * width, width) + '%';
+        console.log('Nouvelle largeur:', bar.style.width);
+        if (progress < duration) {
+          // Si l'animation n'est pas encore terminée, poursuite de l'exécution de l'animation
+          window.requestAnimationFrame(step);
+        }
+      }
+      // Démarrage de l'animation de la barre de progression
       window.requestAnimationFrame(step);
     }
-  }
-  // Запускаем анимацию прогресс-бара
-  window.requestAnimationFrame(step);
-}
   }
 }
 </script>
